@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'sections/background.dart';
 import 'sections/tfc_logo.dart';
+import 'top_bar.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -44,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const TFCLogo(),
+                const TopBar(),
               ],
             )
           ],
