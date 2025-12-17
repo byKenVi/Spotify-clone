@@ -14,15 +14,15 @@ class HighlightAlbums extends StatelessWidget{
         itemCount: highlightAlbumsList.length,
         itemBuilder: (context, index) {
           return HighlightAlbumBadge(
-            album: highlightAlbumsList[index]['art'],
-            art: highlightAlbumsList[index]['album'],
+            album: highlightAlbumsList[index]['album']??"Titre Inconnu",
+            art: highlightAlbumsList[index]['art']??"images/tfc_logo.jpg",
           ); 
         },
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 10,
-          mainAxisExtent: 70,
+          mainAxisExtent: 80,
           crossAxisSpacing: 10,
           
         ),

@@ -10,7 +10,7 @@ class TopBar extends StatelessWidget{
       child: Row(
         children: [
           const Text(
-            'Goood Morning',
+            'Good Morning',
             style: TextStyle(
               fontSize: 30,
               color: Colors.white,

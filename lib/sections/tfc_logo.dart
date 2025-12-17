@@ -11,7 +11,7 @@ class TFCLogo extends StatelessWidget{
       padding: const EdgeInsets.all(20),
       child: SizedBox(
         height: 60,
-        child: Image.asset('images/tfc_logo.png'),
+        child: Image.asset('images/tfc_logo.jpg'),
       ),
       )
     );

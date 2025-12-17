@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-
-class FavouriteArtistsTitle extends StatelessWidget {
-  const FavouriteArtistsTitle({super.key});
+class RecentlyPlayedTitle extends StatelessWidget{
+  const RecentlyPlayedTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +11,9 @@ class FavouriteArtistsTitle extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Your Favourite Artists',
+            'Recently Played',
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 30,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
@@ -24,14 +23,16 @@ class FavouriteArtistsTitle extends StatelessWidget {
       ),
     );
   }
- }
-  class FavouriteArtistsBadge extends StatelessWidget {
-  final String artist;
+
+}
+
+class RecentlyPlayedBadge extends StatelessWidget {
   final String art;
-  const FavouriteArtistsBadge({
+  final String album;
+  const RecentlyPlayedBadge({
     super.key,
-    required this.artist,
-    required this.art
+    required this.art,
+    required this.album
   });
 
   @override
@@ -39,17 +40,22 @@ class FavouriteArtistsTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left : 20),
       child: InkWell(
-        child: Column(children: [
-          CircleAvatar(
-            foregroundImage: AssetImage(art),
-            radius: 90,
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+         SizedBox.square(
+          dimension: 180,
+          child: Image.asset(
+            art,
+            fit: BoxFit.cover),
+         ),
+          
           const SizedBox(height: 15),
           Text(
-            artist,
+            album,
             style: const TextStyle(
               fontSize: 15,
-              color: Colors.white,
+              color: Colors.grey,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -58,15 +64,15 @@ class FavouriteArtistsTitle extends StatelessWidget {
         ),
         onTap: () {},
       ),
-      );
+    );
   }
-  }
+}
 
-  class FavouriteArtistsSection extends StatelessWidget {
-  final List favouriteArtistsList;
-  const FavouriteArtistsSection({
+class RecentlyPlayedSection extends StatelessWidget {
+  final List recentlyPlayedAlbums;
+  const RecentlyPlayedSection({
     super.key,
-    required this.favouriteArtistsList
+    required this.recentlyPlayedAlbums,
   });
 
   @override
@@ -75,17 +81,14 @@ class FavouriteArtistsTitle extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
-          children:[
-              for (var artist in favouriteArtistsList) 
-                FavouriteArtistsBadge(
-                  artist: artist['artist']??"Artiste Inconnu",
-                  art: artist['art']??"images/artist_placeholder.jpg",
-                ),
-          ] 
+          children: recentlyPlayedAlbums.map((album) {
+            return RecentlyPlayedBadge(
+              art: album['art'],
+              album: album['album'],
+            );
+          }).toList(),
         ),
       ),
     );
   }
-  
-  
-  }
+}

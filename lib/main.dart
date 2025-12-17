@@ -3,6 +3,10 @@ import 'sections/background.dart';
 import 'sections/tfc_logo.dart';
 import 'top_bar.dart';
 import 'sections/highlight_albums.dart';
+import 'sections/favourite_artists.dart';
+import 'sections/jump_back_in.dart';
+import 'sections/recently_played.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -32,68 +36,68 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List highlightAlbumsList = [{
-    "name": "Album 1",
+    "album": "Album 1",
     "art": "images/album1.jpg"
   },
   {
-    "name": "Album 2",
+    "album": "Album 2",
     "art": "images/album2.jpg"
   },
   {
-    "name": "Album 3",
+    "album": "Album 3",
     "art": "images/album3.jpg"
   },
   {
-    "name": "Album 4",
+    "album": "Album 4",
     "art": "images/album4.jpg"
   },
   {
-    "name": "Album 5",
+    "album": "Album 5",
     "art": "images/album5.jpg"
   },
   {
-    "name": "Album 6",
+    "album": "Album 6",
     "art": "images/album6.jpg"
   },
   
   ];
 
   List favoriteArtistsList = [{
-    "name": "Artist 1",
+    "album": "Artist 1",
     "art": "images/artist1.jpg"
   },
   {
-    "name": "Artist 2",
+    "album": "Artist 2",
     "art": "images/artist2.jpg"
   },
   {
-    "name": "Artist 3",
+    "album": "Artist 3",
     "art": "images/artist3.jpg"
   },
   {
-    "name": "Artist 4",
+    "album": "Artist 4",
     "art": "images/artist4.jpg"
   },
   
   ];
   List jumpBackInAlbums = [
     {
-      "artiste": "Artist 5",
+      "artist": "Artist 5",
       "album": "Album 5",
       "art": "images/album5.jpg",
     },
     {
-      "artiste": "Artist 6",
+      "artist": "Artist 6",
       "album": "Album 6",
       "art": "images/album6.jpg",
     },
     {
-      "artiste": "Artist 3",
+      "artist": "Artist 3",
       "album": "Album 3",
       "art": "images/album3.jpg",
     },
     {
-      "artiste": "Artist 4",
+      "artist": "Artist 4",
       "album": "Album 4",
       "art": "images/album4.jpg",
     },
@@ -142,8 +146,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 const TopBar(),
                 const SizedBox(height: 15),
                 HighlightAlbums(
-                  highlightAlbumsList: highlightAlbumsList,
+                  highlightAlbumsList: highlightAlbumsList, 
                 ),
+                const SizedBox(height: 50),
+                const FavouriteArtistsTitle(),
+                const SizedBox(height: 15),
+                FavouriteArtistsSection(favouriteArtistsList: favoriteArtistsList),
+                const SizedBox(height: 50),
+                const JumpBackInTitle(),
+                const SizedBox(height: 15),
+                JumpBackInSection(jumpBackInAlbums: jumpBackInAlbums),
+                const SizedBox(height: 50),
+                const RecentlyPlayedTitle(),
+                const SizedBox(height: 15),
+                RecentlyPlayedSection(recentlyPlayedAlbums: recentlyPlayedAlbums),
               ],
             )
           ],
