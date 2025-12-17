@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BackgroundSection extends StatelessWidget {
-  const BackgroundSection({super.key});
+class BackgroundContainer extends StatelessWidget {
+  const BackgroundContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class BackgroundSection extends StatelessWidget {
             Colors.black
           ],
           radius: 0.8,
-          
+
         )
       ),
       );
