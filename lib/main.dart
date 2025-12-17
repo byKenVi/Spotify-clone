@@ -6,6 +6,7 @@ import 'sections/highlight_albums.dart';
 import 'sections/favourite_artists.dart';
 import 'sections/jump_back_in.dart';
 import 'sections/recently_played.dart';
+import 'sections/play_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -164,7 +165,29 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ],
         ),
-      )
+      ),
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          PlayBar(
+            name: currentSong["name"]!,
+            artist: currentSong["artist"]!,
+            art: currentSong["art"]!,
+          ),
+          Container(
+            height: 60,
+            color: Colors.black,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                Icon(Icons.home, color: Colors.white),
+                Icon(Icons.search, color: Colors.white),
+                Icon(Icons.library_music, color: Colors.white),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   
 }
