@@ -37,69 +37,70 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List highlightAlbumsList = [{
-    "album": "Album 1",
+    "album": "Damn",
     "art": "images/album1.jpg"
   },
   {
-    "album": "Album 2",
+    "album": "All Eyez On Me",
     "art": "images/album2.jpg"
   },
   {
-    "album": "Album 3",
+    "album": "Encore",
     "art": "images/album3.jpg"
   },
   {
-    "album": "Album 4",
+    "album": "The Eminem Show",
     "art": "images/album4.jpg"
   },
   {
-    "album": "Album 5",
+    "album": "Starboy",
     "art": "images/album5.jpg"
   },
   {
-    "album": "Album 6",
+    "album": "Destin",
     "art": "images/album6.jpg"
   },
   
   ];
 
-  List favoriteArtistsList = [{
-    "album": "Artist 1",
+  List favoriteArtistsList = [
+  {
+    "artist": "Tiakola",
     "art": "images/artist1.jpg"
   },
   {
-    "album": "Artist 2",
+    "artist": "Damso",
     "art": "images/artist2.jpg"
   },
   {
-    "album": "Artist 3",
+    "artist": "Luidji",
     "art": "images/artist3.jpg"
   },
   {
-    "album": "Artist 4",
+    "artist": "The weekend",
     "art": "images/artist4.jpg"
   },
   
   ];
   List jumpBackInAlbums = [
     {
-      "artist": "Artist 5",
-      "album": "Album 5",
+      "artist": "The Weekend",
+      "album": "Starboy",
       "art": "images/album5.jpg",
     },
     {
-      "artist": "Artist 6",
-      "album": "Album 6",
+      "artist": "Ninho",
+      "album": "Destin",
       "art": "images/album6.jpg",
     },
     {
-      "artist": "Artist 3",
-      "album": "Album 3",
+      "artist": "Eminem",
+      "album": "Encore",
       "art": "images/album3.jpg",
     },
     {
-      "artist": "Artist 4",
-      "album": "Album 4",
+      "artist": "Eminem",
+      "album": "The Eminem Show",
       "art": "images/album4.jpg",
     },
 
@@ -107,27 +108,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List recentlyPlayedAlbums = [
     {
-      "album": "Album 1",
+      "album": "DAMN",
       "art": "images/album1.jpg",
     },
     {
-      "album": "Album 2",
+      "album": "All Eyez on me",
       "art": "images/album2.jpg",
     },
     {
-      "album": "Album 3",
+      "album": "Encore",
       "art": "images/album3.jpg",
     },
     {
-      "album": "Album 4",
+      "album": "The Eminem Show",
       "art": "images/album4.jpg",
     },
 
   ];
 
   Map currentSong = {
-    "name": "Song 1",
-    "artist": "Artist 1",
+    "name": "Locked Out of Heaven",
+    "artist": "Bruno Mars",
     "art": "images/song1.jpg",
   };
 
